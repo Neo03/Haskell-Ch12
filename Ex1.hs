@@ -24,5 +24,8 @@ f n (x:y:ys)
   | otherwise = f n ys
 f n _ = n
 
-countVowels :: String -> Integer
-countVowels = undefined
+countVowels :: String -> Int
+countVowels = length . wordVowels
+
+wordVowels :: String -> String
+wordVowels = filter  isVowel
